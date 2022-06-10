@@ -1,3 +1,5 @@
 # Welcome to the Birthdaze Notification API
 
-## Build Components: NGINX + PHP8 + Lumen + MongoDB 
+**API Components:** NGINX + PHP8 + Lumen + MongoDB 
+
+**APP Components:** Node + React
