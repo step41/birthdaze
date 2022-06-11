@@ -9,10 +9,11 @@ use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 use MoeenBasra\LaravelPassportMongoDB\HasApiTokens;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Person extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable;
+    use Authenticatable, Authorizable, HasFactory;;
 
     /**
      * The attributes that are mass assignable.

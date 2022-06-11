@@ -9,10 +9,11 @@ use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 use MoeenBasra\LaravelPassportMongoDB\HasApiTokens;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable, SoftDeletes, HasApiTokens;
+    use Authenticatable, Authorizable, SoftDeletes, HasApiTokens, HasFactory;
 
     const ADMIN_ROLE = 'ADMIN_USER';
     const BASIC_ROLE = 'BASIC_USER';

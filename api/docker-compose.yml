@@ -41,6 +41,9 @@ services:
 
   #Mongo Database Service
   api-mongo-db:
+    build:
+      context: ./
+      dockerfile: ./docker/mongo.dockerfile
     image: mongo:latest
     container_name: api-mongo-db
     volumes:

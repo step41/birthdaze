@@ -37,8 +37,6 @@ class UserController extends CachingController
             }
             return $this->respondWithCollection($this->repository->paginate($request->page));
         }
-        dd($this->repository);
-
         return $this->respondWithCollection($this->repository->all());
     }
 
