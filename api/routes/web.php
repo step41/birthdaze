@@ -24,7 +24,6 @@ $router->get('appKey', function () {
 $router->post('accessToken', 'UserController@createAccessToken');
 
 $router->group(['prefix' => config('app.api_prefix') . config('app.api_version')], function ($router) {
-
     $router->get('users', 'UserController@index');
     $router->get('users/{id}', 'UserController@show');
 
