@@ -23,6 +23,7 @@
         "illuminate/support": "^9.17",
         "league/oauth2-server": "^8.3",
         "phpseclib/phpseclib": "^3.0",
+        "phpseclib/phpseclib2_compat": "^1.0",
         "symfony/psr-http-message-bridge": "^2.1",
         "laminas/laminas-diactoros": "^2.1"
     },

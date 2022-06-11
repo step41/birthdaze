@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0d682a3409e47b5edc9524adaa27806",
+    "content-hash": "8cda7f9e75e0bcece62cf114b9d22341",
     "packages": [
         {
             "name": "appzcoder/lumen-routes-list",
@@ -3152,6 +3152,62 @@
             "time": "2022-05-17T10:57:52+00:00"
         },
         {
+            "name": "laravel/helpers",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/helpers.git",
+                "reference": "c28b0ccd799d58564c41a62395ac9511a1e72931"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/helpers/zipball/c28b0ccd799d58564c41a62395ac9511a1e72931",
+                "reference": "c28b0ccd799d58564c41a62395ac9511a1e72931",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0|^9.0",
+                "php": "^7.1.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "email": "dries@laravel.com"
+                }
+            ],
+            "description": "Provides backwards compatibility for helpers in the latest Laravel release.",
+            "keywords": [
+                "helpers",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/laravel/helpers/tree/v1.5.0"
+            },
+            "time": "2022-01-12T15:58:51+00:00"
+        },
+        {
             "name": "laravel/lumen-framework",
             "version": "v9.0.2",
             "source": {
@@ -4094,7 +4150,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/server/moeen-basra/laravel-passport-mongodb",
-                "reference": "73b9ed12d70527aa2385f75942ac56ff2bc99c51"
+                "reference": "b40a9251af8b94d27a39349f328dfe933e1396b7"
             },
             "require": {
                 "firebase/php-jwt": "^6.2",
@@ -4111,6 +4167,7 @@
                 "league/oauth2-server": "^8.3",
                 "php": "^8.0",
                 "phpseclib/phpseclib": "^3.0",
+                "phpseclib/phpseclib2_compat": "^1.0",
                 "symfony/psr-http-message-bridge": "^2.1"
             },
             "require-dev": {
@@ -5047,6 +5104,54 @@
                 }
             ],
             "time": "2022-04-04T05:15:45+00:00"
+        },
+        {
+            "name": "phpseclib/phpseclib2_compat",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpseclib/phpseclib2_compat.git",
+                "reference": "cfe43e264e60ddb4d3694626567364521bec5a07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib2_compat/zipball/cfe43e264e60ddb4d3694626567364521bec5a07",
+                "reference": "cfe43e264e60ddb4d3694626567364521bec5a07",
+                "shasum": ""
+            },
+            "require": {
+                "phpseclib/phpseclib": "^3.0"
+            },
+            "provide": {
+                "phpseclib/phpseclib": "2.0.31"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7|^6.0|^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpseclib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "phpseclib 2.0 polyfill built with phpseclib 3.0",
+            "homepage": "https://github.com/phpseclib/phpseclib2_compat",
+            "support": {
+                "issues": "https://github.com/phpseclib/phpseclib2_compat/issues",
+                "source": "https://github.com/phpseclib/phpseclib2_compat"
+            },
+            "time": "2021-05-28T21:27:18+00:00"
         },
         {
             "name": "predis/predis",
