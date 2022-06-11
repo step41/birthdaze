@@ -43,7 +43,6 @@ services:
   api-mongo-db:
     image: mongo:latest
     container_name: api-mongo-db
-    hostname: api-mongo-db
     volumes:
       - "api-data:/data/db:rw"
     environment:
