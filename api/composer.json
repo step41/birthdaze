@@ -1,19 +1,29 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "step41/birthdaze",
+    "description": "Birthdaze Notification API",
+    "keywords": ["nginx", "php", "lumen", "mongodb", "rest", "api", "oauth2", "json"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": "^8.0",
-        "vlucas/phpdotenv": "^5.4",
+        "appzcoder/lumen-routes-list": "@dev",
+        "dusterio/lumen-passport": "^0.3.6",
+        "elcobvg/laravel-opcache": "^0.5.0",
+        "fruitcake/laravel-cors": "^3.0",
+        "illuminate/mail": "^9.17",
+        "illuminate/redis": "^9.17",
+        "jenssegers/mongodb": "dev-master",
         "laravel/lumen-framework": "^9.0",
-        "jenssegers/mongodb": "dev-master"
+        "laravel/passport": "^10.4",
+        "league/fractal": "^0.20.1",
+        "moeen-basra/laravel-passport-mongodb": "@dev",
+        "predis/predis": "^2.0",
+        "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "classmap": [
@@ -36,6 +46,22 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path", 
+            "url": "packages/server/moeen-basra/laravel-passport-mongodb",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path", 
+            "url": "packages/server/appzcoder/lumen-routes-list",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],    
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

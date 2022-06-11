@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\User;
+use App\Models\User;
+use App\Extensions\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -35,5 +36,12 @@ class AuthServiceProvider extends ServiceProvider
                 return User::where('api_token', $request->input('api_token'))->first();
             }
         });
+
+        Passport::routes();
+
+        Passport::tokensCan([
+            'admin' => 'Admin user scope',
+            'basic' => 'Basic user scope',
+        ]);
     }
 }

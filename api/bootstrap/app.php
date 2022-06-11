@@ -23,9 +23,7 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
-
-// $app->withEloquent();
+$app->withFacades();
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +46,7 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -59,7 +58,23 @@ $app->singleton(
 |
 */
 
+// load application configurations
 $app->configure('app');
+
+// load authentication configurations
+$app->configure('auth');
+
+// load cache configurations
+$app->configure('cache');
+
+// load cors configurations
+$app->configure('cors');
+
+// load database configurations
+$app->configure('database');
+
+// load cors configurations
+$app->configure('cors');
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +95,17 @@ $app->configure('app');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->middleware([
+    \Fruitcake\Cors\HandleCors::class,
+]);
+
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+    'throttle' => App\Http\Middleware\ThrottleRequests::class
+]);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -91,11 +117,21 @@ $app->configure('app');
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\EventServiceProvider::class);
+$app->register(App\Providers\RepositoriesServiceProvider::class);
+$app->register(ElcoBvg\Opcache\ServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Jenssegers\Mongodb\MongodbServiceProvider::class);
+$app->register(MoeenBasra\LaravelPassportMongoDB\PassportServiceProvider::class);
+$app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
+$app->register(Fruitcake\Cors\CorsServiceProvider::class);
+$app->register(Appzcoder\LumenRoutesList\RoutesCommandServiceProvider::class);
+
 $app->withEloquent();
+
+
 
 /*
 |--------------------------------------------------------------------------

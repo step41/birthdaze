@@ -49,6 +49,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof AuthorizationException) {
+            return response()->json((['status' => 403, 'message' => 'Insufficient privileges to perform this action']), 403);
+        }
+
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return response()->json((['status' => 405, 'message' => 'Method Not Allowed']), 405);
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+            return response()->json((['status' => 404, 'message' => 'The requested resource was not found']), 404);
+        }
+
         return parent::render($request, $exception);
     }
 }
