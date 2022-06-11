@@ -78,9 +78,9 @@ RUN apt-get update && apt-get upgrade -y \
 COPY ./docker/php.conf /etc/php-fpm.d/www.conf
 
 # group and user perms
-RUN groupadd -g 1000 www \
-    && useradd -u 1000 -ms /bin/bash -g www www \
-    && chown -R www:www . 
+RUN groupadd -g 1000 www-data || true \
+    && useradd -u 1000 -ms /bin/bash -g www-data www-data || true \
+    && chown -R www-data:www-data . 
 
 # set default command
 CMD ["php-fpm", "-F"]
