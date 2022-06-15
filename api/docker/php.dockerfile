@@ -77,6 +77,13 @@ RUN apt-get update && apt-get upgrade -y \
 # add content and configs
 COPY ./docker/php.conf /etc/php-fpm.d/www.conf
 
+# some utility installations
+RUN apt-get update && apt-get install -y procps \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y net-tools \
+    && apt install -y vim \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # group and user perms
 RUN groupmod -g 1000 www-data \
     && usermod -u 1000 -s /bin/bash -g www-data www-data

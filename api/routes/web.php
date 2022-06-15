@@ -24,12 +24,22 @@ $router->get('appKey', function () {
 $router->post('accessToken', 'UserController@createAccessToken');
 
 $router->group(['prefix' => config('app.api_prefix') . config('app.api_version')], function ($router) {
+
     $router->get('users', 'UserController@index');
     $router->get('users/{id}', 'UserController@show');
 
+    $router->get('persons', 'PersonController@index');
+    $router->get('persons/{id}', 'PersonController@show');
+
     $router->group(['middleware' => ['auth:api', 'throttle:60']], function ($router) {
+
         $router->post('users', 'UserController@store');
         $router->put('users/{id}', 'UserController@update');
         $router->delete('users/{id}', 'UserController@destroy');
+
+        $router->post('persons', 'PersonController@store');
+        $router->put('persons/{id}', 'PersonController@update');
+        $router->delete('persons/{id}', 'PersonController@destroy');
+
     });
 });

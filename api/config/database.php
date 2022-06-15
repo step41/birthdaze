@@ -35,14 +35,30 @@ return [
 
         'mongodb' => [
             'driver'   => 'mongodb',
+            'dsn'      => env('DB_DSN', 'mongodb://localhost:27017'),
             'host'     => env('DB_HOST', 'localhost'),
             'port'     => env('DB_PORT', 27017),
             'database' => env('DB_NAME', 'local'),
             'username' => env('DB_USER'),
             'password' => env('DB_PASS'),
             'options'  => [
-                'database' => 'admin' // sets the authentication database required by mongo 3
-            ]
+                'database' => 'admin', // sets the authentication database required by mongo 3
+                'databaseName' => 'admin',
+                'authSource' => 'admin',
+                //'tls' => true,
+                //'serverSelectionTryOnce' => false,
+            ]/* ,
+            'driver_options' => [
+                'context' => [
+                    'ssl' => [
+                        'cafile' => '/home/ubuntu/.ssh/rds-combined-ca-bundle.pem',
+                        'allow_self_signed' => true,
+                        'verify_peer' => true,
+                        'verify_peer_name' => true,
+                        'verify_expiry' => true,
+                    ]
+                ]
+            ] */
         ],
 
         'sqlite' => [

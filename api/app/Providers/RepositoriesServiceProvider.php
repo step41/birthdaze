@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use App\Repositories\UserRepository;
+use App\Repositories\PersonRepository;
 use App\Repositories\Decorators\CachedUserRepository;
 
 class RepositoriesServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -24,6 +25,7 @@ class RepositoriesServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         // Option 1. Use caching at controller level. Use CachingController as base class
         $this->app->bind('App\Repositories\Contracts\UserRepository', UserRepository::class);
+        $this->app->bind('App\Repositories\Contracts\PersonRepository', PersonRepository::class);
 
         // Option 2. Use caching at repository level
         // $this->app->singleton('App\Repositories\Contracts\UserRepository', function () {
@@ -39,7 +41,8 @@ class RepositoriesServiceProvider extends \Illuminate\Support\ServiceProvider
     public function provides()
     {
         return [
-            UserRepository::class
+            UserRepository::class,
+            PersonRepository::class
         ];
     }
 }
