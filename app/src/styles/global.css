@@ -1,0 +1,96 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #17161d;
+	color: #fff;
+	display: grid;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	  sans-serif;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-areas: 'main' 'footer';
+	grid-template-rows: 1fr 80px;
+	margin: 0;
+	padding: 0;
+}
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.text-bold {
+	font-weight: bold;
+}
+.App {
+	position: relative;
+	padding-bottom: 60px;
+}
+#header {
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+	margin: 0;
+	padding: 0;
+}
+.nav {
+	align-items: center;
+	display: flex;
+	height: 90px;
+	margin: 0;
+	padding: 30px 25px;
+}
+.nav .nav-logo {
+	margin-right: 10px;
+	width: 50px;
+}
+.nav-title {
+	font-size: 22px;
+	font-weight: 700;
+	margin-right: auto;
+}
+.nav-items {
+	display: flex;
+	list-style: none;
+}
+.nav-items li {
+	font-weight: 500;
+	margin: 0;
+	padding: 0 10px;
+}
+.nav-items li a,
+.nav-items li a:hover,
+.nav-items li a:active,
+.nav-items li a:focus,
+.nav-items li a:visited 
+{
+	text-decoration: none;
+}
+#hero, #content {
+	padding: 40px;
+	position: relative;
+}
+#content {
+	grid-area: main;
+	overflow-x: hidden;
+}
+#hero {
+	display: flex;
+	flex-direction: column;
+}
+#hero img {
+	align-self: center;
+	margin-bottom: 20px;
+	max-width: 400px;
+}
+#footer {
+	display: block;
+	grid-area: footer;
+	height: 45px;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
+}

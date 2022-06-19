@@ -21,7 +21,7 @@ $router->get('appKey', function () {
 });
 
 // route for creating access_token
-$router->post('accessToken', 'UserController@createAccessToken');
+$router->post('/oauth/token', 'UserController@createAccessToken');
 
 $router->group(['prefix' => config('app.api_prefix') . config('app.api_version')], function ($router) {
 

@@ -169,8 +169,8 @@ class UserController extends CachingController
             'grant_type'    => 'required|alpha',
             'client_id'     => 'required|alpha_num',
             'client_secret' => 'required|alpha_num',
-            'username'      => 'required|email',
-            'password'      => 'required|string|min:8',
+            //'username'      => 'required|email',
+            //'password'      => 'required|string|min:8',
             'scope'         => 'alpha',
         ])) {
             return $this->sendInvalidFieldResponse($errors);

@@ -43,22 +43,7 @@ return [
             'password' => env('DB_PASS'),
             'options'  => [
                 'database' => 'admin', // sets the authentication database required by mongo 3
-                'databaseName' => 'admin',
-                'authSource' => 'admin',
-                //'tls' => true,
-                //'serverSelectionTryOnce' => false,
-            ]/* ,
-            'driver_options' => [
-                'context' => [
-                    'ssl' => [
-                        'cafile' => '/home/ubuntu/.ssh/rds-combined-ca-bundle.pem',
-                        'allow_self_signed' => true,
-                        'verify_peer' => true,
-                        'verify_peer_name' => true,
-                        'verify_expiry' => true,
-                    ]
-                ]
-            ] */
+            ]
         ],
 
         'sqlite' => [

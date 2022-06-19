@@ -1,0 +1,23 @@
+#page-home #header {
+	background-color: #100f15;
+	border-bottom: 1px #0b0b0f solid;
+}
+#page-home .nav-title {
+	color: #0cf;
+}
+#page-home .nav-items li {
+	color: #0cf;
+}
+#page-home .nav-items li a,
+#page-home .nav-items li a:hover,
+#page-home .nav-items li a:active,
+#page-home .nav-items li a:focus,
+#page-home .nav-items li a:visited 
+{
+	color: #0cf;
+}
+#page-home #footer {
+	background-color: #100f15;
+	border-top: 1px #0b0b0f solid;
+	color: #fff;
+}
